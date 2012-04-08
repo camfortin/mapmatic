@@ -1,0 +1,40 @@
+<div class="well">
+<%= form_for(@spot) do |f| %>
+  <% if @spot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spot.errors.count, "error") %> prohibited this spot from being saved:</h2>
+
+      <ul>
+      <% @spot.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %><br />
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %><br />
+  </div>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.text_field :image %><br />
+  </div>
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %><br />
+  </div>
+  <div class="field">
+    <%= f.label :user %>
+    <%= f.text_field :user %><br />
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
+

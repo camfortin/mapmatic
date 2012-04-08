@@ -1,0 +1,26 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/">Mapmatic</a>
+      <ul class="nav">
+        <li><%= link_to 'About', about_path %></li>
+        <li><%= link_to 'Sandbox', sandbox_path %></li>
+        <li class="btn-group">
+		  <button class="btn btn-primary">Spots: </button>
+		  <button class="btn dropdown-toggle btn-primary" data-toggle="dropdown">
+		    <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu">
+			<li><%= link_to 'Add Spot', '/spots/new'  %></li>
+	        <li><%= link_to 'See Spots', spots_path  %></li>
+		  </ul>
+		</li>
+		
+      </ul>
+      <ul class="nav pull-right">
+        <li><a href="/sign_in">Sign In</a></li>
+        <li><a href="/users/new">Sign Up</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
