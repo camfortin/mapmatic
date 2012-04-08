@@ -16,3 +16,7 @@ body {
         padding-top: 55px;
         padding-bottom: 40px;
       }
+
+h3 {
+	color: gray;
+}
