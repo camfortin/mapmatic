@@ -14,7 +14,7 @@
 
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title %><br />
+    <%= f.text_field :title, placeholder: "spot title..." %><br />
   </div>
   <div class="field">
 	<%= f.label :description %>
@@ -22,15 +22,15 @@
   </div>
   <div class="field">
     <%= f.label :image %>
-    <%= f.text_field :image %><br />
+    <%= f.text_field :image, placeholder: "http://example.com/yourimage..."%><br />
   </div>
   <div class="field">
     <%= f.label :location %>
-    <%= f.text_field :location %><br />
+    <%= f.text_field :location, placeholder: "san francisco, ca..." %><br />
   </div>
   <div class="field">
     <%= f.label :user %>
-    <%= f.text_field :user %><br />
+    <%= f.text_field :user, placeholder: "user name..." %><br />
   </div>
 
   <button type="submit" class="btn">Add Spot</button>
