@@ -1,4 +1,15 @@
-<h1>Listing spots</h1>
+<h1>Recently Added Places</h1>
+
+<br />
+
+<% @spots.each do |spot| %>
+  <div class="span3">
+    <img src="<%= spot.image %>" class="span3"/>
+	<h3 class="span3"><%= spot.title %></h3>
+    <p class="span3"><%= spot.user %> to <%= spot.location %>,
+    <%= link_to 'View', spot %></p>
+  </div>
+<% end %>
 
 <table>
   <tr>
