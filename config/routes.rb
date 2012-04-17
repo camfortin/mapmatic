@@ -1,7 +1,7 @@
 Mapmatic::Application.routes.draw do
   root :to => 'pages#home'
   resources :spots
-  
+  match '/spots/test',   :controller => "spots", :action => "test"
   match '/about',   :to => 'pages#about'
   match '/sandbox', :to => 'pages#sandbox'
 
