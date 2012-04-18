@@ -80,8 +80,8 @@ class SpotsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-  # text /spots/test
+
+  # GET /spots/test
   def test
     @spot = Spot.first.title
   end

@@ -1,9 +1,11 @@
 Mapmatic::Application.routes.draw do
   root :to => 'pages#home'
+  #map.connect '/spots/test', :controller => 'spots', :action => 'test'
+  match '/spots/test',   :to => 'spots#test'
   resources :spots
-  match '/spots/test',   :controller => "spots", :action => "test"
   match '/about',   :to => 'pages#about'
   match '/sandbox', :to => 'pages#sandbox'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
