@@ -3,7 +3,7 @@ class Spot < ActiveRecord::Base
     has_attached_file :image,
         :styles => { :medium => "300x300>", :thumb => "100x100>" },
         :storage => :s3,
-        :s3_credentials => "#{Rails.root}/config/s3.yml",
+        :s3_credentials => S3_CREDENTIALS,
         :path => "images/:style/:id/:filename"
     validates :user, :presence => true
 end
