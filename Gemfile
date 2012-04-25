@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 
+gem 'aws-sdk'
+gem 'aws-s3'
 gem 'paperclip', '~> 3.0'
 
 #gem 'less-rails-bootstrap'
