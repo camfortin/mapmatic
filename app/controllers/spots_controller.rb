@@ -10,17 +10,6 @@ class SpotsController < ApplicationController
     end
   end
 
-  # GET /spots/1
-  # GET /spots/1.json
-  def show
-    @spot = Spot.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @spot }
-    end
-  end
-
   # GET /spots/new
   # GET /spots/new.json
   def new
@@ -28,6 +17,17 @@ class SpotsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.json { render json: @spot }
+    end
+  end
+  
+  # GET /spots/1
+  # GET /spots/1.json
+  def show
+    @spot = Spot.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
       format.json { render json: @spot }
     end
   end

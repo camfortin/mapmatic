@@ -1,5 +1,5 @@
 <div class="well">
-<%= form_for(@spot) do |f| %>
+<%= form_for @spot, :html => { :multipart => true }  do |f| %>
   <% if @spot.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@spot.errors.count, "error") %> prohibited this spot from being saved:</h2>
@@ -22,7 +22,7 @@
   </div>
   <div class="field">
     <%= f.label :image %>
-    <%= f.text_field :image, placeholder: "http://example.com/yourimage..."%><br />
+    <%= f.file_field :image, placeholder: "http://example.com/yourimage..."%><br />
   </div>
   <div class="field">
     <%= f.label :location %>
