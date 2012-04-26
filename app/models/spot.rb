@@ -1,5 +1,5 @@
 class Spot < ActiveRecord::Base
-    attr_accessible :description, :image, :location, :title, :user, :photo
+    attr_accessible :description, :image, :location, :title, :user
     has_attached_file :image,
         :styles => { :medium => "300x300>", :thumb => "100x100>" },
         :storage => :s3,
