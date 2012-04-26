@@ -11,13 +11,11 @@ class SpotsController < ApplicationController
   end
 
   # GET /spots/new
-  # GET /spots/new.json
   def new
     @spot = Spot.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @spot }
     end
   end
   
