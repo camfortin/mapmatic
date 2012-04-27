@@ -16,7 +16,9 @@
 
 <p>
   <b>Location:</b>
-  <%= @spot.location %>
+  <%= @spot.location.is_valid ?
+      "#{@spot.location.latitude} and #{@spot.location.longitude} at #{@spot.location.altitude.round(3)} m" :
+      "unknown" %>
 </p>
 
 <p>

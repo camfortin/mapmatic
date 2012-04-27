@@ -6,9 +6,9 @@ class GeoLocation
         if location_string != nil
             parts = location_string.split(',')
             if parts.count == 3
-                @latitude = parts[0]
-                @longitude = parts[1]
-                @altitude= parts[2]
+                @latitude = parts[0].to_f
+                @longitude = parts[1].to_f
+                @altitude= parts[2].to_f
                 @is_valid = true
             end
         end
