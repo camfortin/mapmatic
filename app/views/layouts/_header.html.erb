@@ -1,20 +1,24 @@
 <div class="navbar navbar-fixed-top">
-  <div class="navbar-inner test">
-    <div class="container test">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
       <a class="brand" href="/">Mapmatic</a>
-      <ul class="nav">
-        <li><%= link_to 'About', about_path %></li>
-        <li><%= link_to 'Sandbox', sandbox_path %></li>
-        <li><%= link_to 'Add Spot', '/spots/new' %></li>
-	    <li><%= link_to 'See Spots', spots_path  %></li>
+      <div class="nav-collapse">
+      	<ul class="nav">
+        	<li><%= link_to 'About', about_path %></li>
+        	<li><%= link_to 'Sandbox', sandbox_path %></li>
+        	<li><%= link_to 'Add Spot', '/spots/new' %></li>
+	    	<li><%= link_to 'See Spots', spots_path  %></li>
 		</ul>
-		</li>
-		
-      </ul>
-      <ul class="nav pull-right">
-        <li><a href="/sign_in">Sign In</a></li>
-        <li><a href="/users/new">Sign Up</a></li>
-      </ul>
+        <ul class="nav pull-right">
+        	<li><a href="/sign_in">Sign In</a></li>
+        	<li><a href="/users/new">Sign Up</a></li>
+      	</ul>
+      </div><!--/.nav-collapse -->
     </div>
   </div>
 </div>
