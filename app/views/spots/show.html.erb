@@ -1,31 +1,33 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
+<div class="page-header">
+<h1> <%= @spot.title %> </h1>
+</div>
+<div class="row">
+<div class="span6">
 <p>
-  <b>Title:</b>
-  <%= @spot.title %>
+<%= image_tag @spot.image.url(:medium) %>
 </p>
-
 <p>
-  <b>Description:</b>
-  <%= @spot.description %>
+<b>description:</b> <%= @spot.description %>
 </p>
-
-<p>
-  <%= image_tag @spot.image.url(:medium) %>
-</p>
-
 <p>
   <b>Location:</b>
   <%= @spot.location.is_valid ?
       "#{@spot.location.latitude} and #{@spot.location.longitude} at #{@spot.location.altitude.round(3)} m" :
       "unknown" %>
 </p>
-
 <p>
   <b>User:</b>
   <%= @spot.user %>
 </p>
 
-
 <%= link_to 'Edit', edit_spot_path(@spot) %> |
 <%= link_to 'Back', spots_path %>
+</div>
+<div class="span6">
+<p><img border="0" src="//maps.googleapis.com/maps/api/staticmap?center=Mountain+Home+Inn,Mill+Valley,CA&zoom=14&size=250x250&maptype=roadmap&markers=color:blue%7Clabel:S%7C37.909449,-122.581201&sensor=false" alt="Mount Tamalpais" /></p>
+</div>
+</div>
+</div>

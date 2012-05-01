@@ -1,8 +1,12 @@
-<h2>Recent Spots:</h2>
-
-<% @spots.each do |spot| %>
+<div class="page-header">
+   <h1>Recent Spots <small>discover the world around you</small></h1>
+ </div>
+<div class="container">
+</div>
+<div class="container">
+<% @spots.reverse.each do |spot| %>
   <div class="span3">
-    <img src="<%= spot.image %>" class="span3"/>
+	<%= link_to image_tag(spot.image.url(:medium), :class => "span3"), url_for(spot)  %>
 	<div id="currentspotlocation" class="modal hide fade in span3" style="display: none; ">  
 	<div class="modal-header">  
 	<a class="close" data-dismiss="modal">×</a>  
@@ -10,7 +14,7 @@
 	</div>  
 	<div class="modal-body ">  
 	<h4><%= spot.location %></h4> 
-	<p><img border="0" src="//maps.googleapis.com/maps/api/staticmap?center=Mountain+Home+Inn,Mill+Valley,CA&zoom=14&size=512x512&maptype=roadmap&markers=color:blue%7Clabel:S%7C37.909449,-122.581201&sensor=false" alt="Mount Tamalpais" /></p>              
+	<p><img border="0" src="//maps.googleapis.com/maps/api/staticmap?center=Mountain+Home+Inn,Mill+Valley,CA&zoom=14&size=250x250&maptype=roadmap&markers=color:blue%7Clabel:S%7C37.909449,-122.581201&sensor=false" alt="Mount Tamalpais" /></p>              
 	</div>  
 	<div class="modal-footer">  
 	<a href="#" class="btn btn-success">Like</a>  
@@ -21,41 +25,29 @@
 	</div> 
 	<p class="span3"><%= spot.title %> added by <%= spot.user %> to mapnamehere.</p>
 	<p class="span3"><a data-toggle="modal" href="#currentspotlocation"><%= spot.location %></a></p>
-  </div>
-<% end %>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Image</th>
-    <th>Location</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @spots.each do |spot| %>
-  <tr>
-    <td><%= spot.title %></td>
-    <td><%= spot.description %></td>
-    <td><%= spot.image %></td>
-    <td><%= spot.location %></td>
-    <td><%= spot.user %></td>
+	<tr>
     <td><%= link_to 'Show', spot %></td>
     <td><%= link_to 'Edit', edit_spot_path(spot) %></td>
     <td><%= link_to 'Destroy', spot, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
+  </div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Spot', new_spot_path %>
-
-<p>All spot titles in lowercase:</p>
-<br />
-<% @spots.each do |spot| %>
-	<%= spot.title.downcase %>, 
-<% end %>
+</div>
+<hr>
+<div class="row">
+	         	<div class="span4">
+	              <h3>take pictures of places you love</h3>
+	              <p>add spots on the go with our app and mapmatic will automatically create a map for you!</p>
+	              <p><a class="btn btn-primary" href="#">download the app</a></p>
+	            </div><!--/span-->
+				<div class="span4">
+	              <h3>plan a whole hike or vacation</h3>
+	              <p>browse maps by geography, type and other attributes and easily add spots to your own maps.</p>
+	              <p><a class="btn" href="about/#maps">check out a sample map</a></p>
+	            </div><!--/span-->
+				<div class="span4">
+	              	<h3>add a spot</h3>
+		              <p>go ahead, add a spot!</p>
+	              <p><%= link_to 'new spot', new_spot_path, class: "btn"  %></p>
+	            </div><!--/span-->
+</div>
