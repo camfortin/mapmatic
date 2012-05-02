@@ -41,9 +41,9 @@ class GeoLocation
 
     def to_s
         if is_valid
-            "#{@latitude},#{@longitude},#{@altitude}"
+            "#{@latitude} and #{@longitude} at #{@altitude.round(3)} m"
         else
-            "<invalid>"
+            "unknown"
         end
     end
 

@@ -14,9 +14,7 @@
 </p>
 <p>
   <b>Location:</b>
-  <%= @spot.location.is_valid ?
-      "#{@spot.location.latitude} and #{@spot.location.longitude} at #{@spot.location.altitude.round(3)} m" :
-      "unknown" %>
+  <%= @spot.location %>
 </p>
 <p>
   <b>User:</b>
@@ -27,7 +25,9 @@
 <%= link_to 'Back', spots_path %>
 </div>
 <div class="span6">
-<p><img border="0" src="//maps.googleapis.com/maps/api/staticmap?center=Mountain+Home+Inn,Mill+Valley,CA&zoom=14&size=250x250&maptype=roadmap&markers=color:blue%7Clabel:S%7C37.909449,-122.581201&sensor=false" alt="Mount Tamalpais" /></p>
+    <p>
+        <img border="0" src="<%= getMapsUrl(@spot, "300x300") %>" alt="<%= @spot.location %>" />
+    </p>
 </div>
 </div>
 </div>

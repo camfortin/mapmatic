@@ -83,4 +83,14 @@ class SpotsController < ApplicationController
   def test
     @spot = Spot.first.title
   end
+
 end
+
+  def getMapsUrl(spot, size)
+      base="http://maps.googleapis.com/maps/api/staticmap"
+      zoom="14"
+      markers="color:blue|label#{spot.title}|#{spot.location.latitude},#{spot.location.longitude}"
+      url = base + "?markers=" + markers + "&zoom=" + zoom + "&size=" + size + "&sensor=false"
+      puts url
+      url
+  end
