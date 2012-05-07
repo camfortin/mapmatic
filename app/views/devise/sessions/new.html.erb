@@ -1,0 +1,27 @@
+<div class="page-header">
+<h1>Sign In</h1>
+</div>
+
+<div class="row">
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	<%= devise_error_messages! %>
+<div class="well span6">
+  
+	<div class="field">
+	<%= f.label :username %>
+	<%= f.text_field :username, placeholder: "your username..." %></div>
+	<br />
+
+  <div class="field"><%= f.label :password %>
+  <%= f.password_field :password, placeholder: "your password..." %></div>
+  <br />
+
+  <div class="field"><%= f.check_box :remember_me %> Remember me</div>
+  <br />
+
+  <div class="field"><button type="submit" class="btn btn-primary">Sign In</button></div>
+	<br />
+  <% end %>
+  <%= render "links" %>
+</div>
+</div>

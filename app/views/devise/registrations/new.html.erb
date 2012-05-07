@@ -1,0 +1,48 @@
+<div class="page-header">
+<h1>Sign Up</h1>
+</div>
+
+<div class="row">
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+	
+	<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="well span6">
+
+	<div class="field">
+	<%= f.label :username %>
+	<%= f.text_field :username, placeholder: "your desired username..." %></div>
+	<br />
+	
+	<div class="field">
+	<%= f.label :name %>
+	<%= f.text_field :name, placeholder: "your real name (optional)..." %></div>
+	<br />
+
+  <div class="field"><%= f.label :email %>
+  <%= f.email_field :email, placeholder: "your real email..." %></div>
+  <br />
+
+  <div class="field"><%= f.label :password %>
+  <%= f.password_field :password, placeholder: "6-20 characters..." %></div>
+  <br />
+
+  <div class="field"><button type="submit" class="btn btn-primary">Sign Up</button></div>
+  <br />
+<% end %>
+<%= render "links" %>
+</div>
+</div>
+
+
+
