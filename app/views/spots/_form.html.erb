@@ -14,26 +14,27 @@
 
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title, placeholder: "spot title..." %><br />
-  </div>
+    <%= f.text_field :title, placeholder: "spot title..." %></div>
+	<br />
+
   <div class="field">
 	<%= f.label :description %>
     <%= f.text_area :description, placeholder: "optional spot description...", class: "span4", :rows => 3 %>
   </div>
+	<br />
+	
   <div class="field">
     <%= f.label :image %>
-    <%= f.file_field :image, placeholder: "http://example.com/yourimage..."%><br />
-  </div>
+    <%= f.file_field :image, placeholder: "http://example.com/yourimage..."%></div>
+		<br />
+
   <div class="field">
     <%= f.label :location %>
-    <%= f.text_field :location, placeholder: "san francisco, ca..." %><br />
-  </div>
-  <div class="field">
-    <%= f.label :user %>
-    <%= f.text_field :user, placeholder: "user name..." %><br />
-  </div>
+    <%= f.text_field :location, placeholder: "san francisco, ca..." %> </div>
+		<br />
 
-  <button type="submit" class="btn">Add Spot</button>
+
+  <button type="submit" class="btn btn-primary">Add Spot</button>
 
 <% end %>
 </div>

@@ -1,11 +1,12 @@
 Mapmatic::Application.routes.draw do
+  devise_for :users
   root :to => 'pages#home'
   #map.connect '/spots/test', :controller => 'spots', :action => 'test'
   match '/spots/test',   :to => 'spots#test'
   resources :spots
+  resources :users
   match '/about',   :to => 'pages#about'
   match '/sandbox', :to => 'pages#sandbox'
-  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

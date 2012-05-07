@@ -8,15 +8,33 @@
       </a>
       <a class="brand" href="/">Mapmatic</a>
       <div class="nav-collapse">
+			<% if user_signed_in? %>
+				<ul class="nav pull-right">	
+					<li id="fat-menu" class="dropdown">
+	         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= "Welcome " + current_user.username.capitalize %> <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+					<li><a href="/users/<%= current_user.username %>">Profile</a>
+					<li><a href="/users/<%= current_user.username %>">Your Spots</a>
+					<li><a href="/users/<%= current_user.username %>">Your Maps</a>
+					<%= link_to "Your Spots", "#" %></li>
+					<li><%= link_to "Your Maps", "#" %></li>
+					<li class="divider"></li>
+					<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+					<li><%= link_to "Edit Account", edit_user_registration_path %></li>
+					</ul>
+					</li>
+				</ul>
+				<% else %> 
+				<ul class="nav pull-right">
+				  <li><%= link_to "Sign Up", new_user_registration_path %></li> 
+					<li><%= link_to "Sign In", new_user_session_path %></li>
+				 	</ul>
+				 <% end %>
       	<ul class="nav">
         	<li><%= link_to 'About', about_path %></li>
         	<li><%= link_to 'Add Spot', '/spots/new' %></li>
 	    	<li><%= link_to 'See Spots', spots_path  %></li>
-		</ul>
-        <ul class="nav pull-right">
-        	<li><a href="/sign_in">Sign In</a></li>
-        	<li><a href="/users/new">Sign Up</a></li>
-      	</ul>
+		    </ul>
       </div><!--/.nav-collapse -->
     </div>
   </div>
