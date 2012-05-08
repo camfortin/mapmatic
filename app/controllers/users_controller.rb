@@ -20,10 +20,12 @@ class UsersController < ApplicationController
     end
   end
   
-  # GET /users/1
-  # GET /users/1.json
+  # GET /users/username
+  # GET /users/usermame.json
   def show
     @user = User.find_by_username(params[:id])
+    
+    @users = User.all
 
     respond_to do |format|
       format.html # show.html.erb

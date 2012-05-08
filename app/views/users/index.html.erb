@@ -1,10 +1,13 @@
 <div class="page-header">
-   <h1>Users <small>awesome people using mapmatic</small></h1>
+   <h1>Mappers <small>explorers who have joined the adventure</small></h1>
 </div>
 <div class="container">
+	<p>there are <%= @users.count %> people using mapmatic!</p>
+	<ul>
 	<% @users.reverse.each do |user| %>
-	<%= user.name %> (<a href="/users/<%= user.username %>"><%= user.id %></a>)
+	<li><%= user.name %> (<a href="/users/<%= user.username %>"><%= user.id %></a>)</li>
 	<% end %>
+	</ul>
 </div>
 
 

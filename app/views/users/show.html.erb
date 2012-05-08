@@ -3,3 +3,29 @@
 <div class="page-header">
 <h1> <%= @user.username %> </h1>
 </div>
+<br />
+
+<div class="container">
+<div class="row">
+<div class="span6 columns">
+<ul>
+	<li>name: <%= @user.name %></li>
+	<li>email: <%= @user.email %></li>
+	<li>following: not yet...</li>
+	<li>followers: not yet...</li>
+	<li><%= link_to "Edit Account", edit_user_registration_path %></li>
+</ul>
+</div>
+
+<div class="span6 columns">
+<div class="alert alert-block alert-success fade in">
+  <a class="close" data-dismiss="alert" href="#">&times;</a>
+  <h4 class="alert-heading">Thank you for using mapmatic!</h4>
+  <p>you are <%= @user.id %> out of <%= @users.count %> mappers</p>
+	<br />
+  <p>
+    <a class="btn btn-primary" href="/spots/new">Add a Spot</a></a>
+  </p>
+</div>
+</div>
+</div>
