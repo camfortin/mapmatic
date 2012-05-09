@@ -1,20 +1,15 @@
 <% @title = @user.name %>
 
 <div class="page-header">
-<h1> <%= @user.username %> </h1>
+<h1> <%= @user.username %> <soft><%= @user.name %></soft></h1>
 </div>
 <br />
 
 <div class="container">
 <div class="row">
 <div class="span6 columns">
-<ul>
-	<li>name: <%= @user.name %></li>
-	<li>email: <%= @user.email %></li>
-	<li>following: not yet...</li>
-	<li>followers: not yet...</li>
-	<li><%= link_to "Edit Account", edit_user_registration_path %></li>
-</ul>
+<p>Total Spots: <%= @user.spots.count %></p>
+
 </div>
 
 <div class="span6 columns">

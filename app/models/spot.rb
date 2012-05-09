@@ -19,5 +19,7 @@ class Spot < ActiveRecord::Base
     def location=(val)
         self[:location] = val
     end
+    
+    validates :user_id, presence: true
 
 end

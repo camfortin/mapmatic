@@ -13,7 +13,8 @@ class SpotsController < ApplicationController
 
   # GET /spots/new
   def new
-    @spot = Spot.new
+    @spot = current_user.spots.build
+    #@spot = Spot.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -39,7 +40,8 @@ class SpotsController < ApplicationController
   # POST /spots
   # POST /spots.json
   def create
-    @spot = Spot.new(params[:spot])
+    @spot = current_user.spots.new(params[:spot])
+    #@spot = Spot.new(params[:spot])
 
     respond_to do |format|
       if @spot.save

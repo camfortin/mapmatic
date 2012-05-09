@@ -18,11 +18,13 @@
 </p>
 <p>
   <b>User:</b>
-  <%= @spot.user %>
+  <%= @spot.user.username %>
 </p>
 
-<%= link_to 'Edit', edit_spot_path(@spot) %> |
+<%= link_to 'Edit', edit_spot_path(@spot) %>
 <%= link_to 'Back', spots_path %>
+<%= link_to 'Destroy', @spot, confirm: 'Are you sure?', method: :delete %>
+
 </div>
 <div class="span6">
     <p>
