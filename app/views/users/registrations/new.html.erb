@@ -15,4 +15,18 @@
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
+<div class="container">
+  <p><strong>services you can connect with:</strong></p>
+<% else %>
+  <p><strong>Sign in through one of these services:</strong></p>
+<% end %>
+
+<a href="/auth/twitter" class="auth_provider">
+  Twitter
+</a>
+<a href="/auth/facebook" class="auth_provider">
+  Facebook
+</a>
+</div>
+
 <%= render "links" %>

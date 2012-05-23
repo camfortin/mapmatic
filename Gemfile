@@ -6,7 +6,11 @@ gem 'aws-sdk'
 gem 'aws-s3'
 gem 'paperclip', '~> 3.0'
 gem "devise", "~> 2.0.4"
+gem "omniauth"
+gem "omniauth-facebook"
+gem "omniauth-twitter"
 #gem 'less-rails-bootstrap'
+gem 'nifty-generators'
 
 group :development do
   gem 'sqlite3', '1.3.5'
@@ -27,3 +31,5 @@ gem 'jquery-rails', '2.0.0'
 group :production do
   gem 'pg', '0.12.2'
 end
+
+gem "mocha", :group => :test

@@ -9,6 +9,38 @@
 <div class="row">
 <div class="well span6 columns">
 
+	<div class="container">
+
+	<% if @authentications %>
+	  <% unless @authentications.empty? %>
+	    <p><strong>Sign in with:</strong></p>
+	    <div class="authentications">
+	      <% for authentication in @authentications %>
+	        <div class="authentication">
+	          <div class="provider"><%= authentication.provider.titleize %></div>
+	          <div class="uid"><%= authentication.uid %></div>
+	          <%= link_to "X", authentication, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove" %>
+	        </div>
+	      <% end %>
+	    </div>
+	  <% end %>
+	</div>
+	<hr>
+	<div class="container">
+	  <p><strong>services you can connect with:</strong></p>
+	<% else %>
+	  <p><strong>Sign in through one of these services:</strong></p>
+	<% end %>
+
+	<a href="/auth/twitter" class="auth_provider">
+	  Twitter
+	</a>
+	<a href="/auth/facebook" class="auth_provider">
+	  Facebook
+	</a>
+	</div>
+	
+	<hr>
   
 	<div class="field">
 	<%= f.label :username %>
@@ -25,6 +57,7 @@
   <div class="field"><button type="submit" class="btn btn-primary">Sign In</button></div>
 	<br />
   <% end %>
+
   <%= render "links" %>
 </div>
 </div>
